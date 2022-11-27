@@ -7,25 +7,16 @@ import {
   useState,
 } from 'react'
 import {
-  ActionsTypes,
   addNewCycleAction,
+  deleteAllCyclesAction,
   interruptCurrentCycleAction,
   markCurrentCycleAsFinishedAction,
 } from '../reducers/cycles/actions'
-import { cyclesReducer } from '../reducers/cycles/reducer'
+import { Cycle, cyclesReducer, CyclesState } from '../reducers/cycles/reducer'
 
 interface CreateCycleData {
   task: string
   minutesAmount: number
-}
-
-export interface Cycle {
-  id: string
-  task: string
-  minutesAmount: number
-  startDate: Date
-  interruptedDate?: Date
-  finishedDate?: Date
 }
 
 interface CyclesContextType {
@@ -37,6 +28,7 @@ interface CyclesContextType {
   setSecondsPassed: (seconds: number) => void
   createNewCycle: (data: CreateCycleData) => void
   interruptCurrentCycle: () => void
+  deleteAllCycles: () => void
 }
 
 interface CyclesContextProviderProps {
@@ -54,8 +46,6 @@ export function CyclesContextProvider({
       cycles: [],
       activeCycleId: null,
     },
-    // o terceiro parametro do reducer é disparado quando ele inicia
-    // e recupera dados previamente
     () => {
       const storedStateAsJson = localStorage.getItem(
         '@timer-pomodoro:cycles-state',
@@ -64,6 +54,11 @@ export function CyclesContextProvider({
       if (storedStateAsJson) {
         return JSON.parse(storedStateAsJson)
       }
+
+      return {
+        cycles: [],
+        activeCycleId: null,
+      } as CyclesState
     },
   )
 
@@ -112,6 +107,10 @@ export function CyclesContextProvider({
     dispatch(interruptCurrentCycleAction())
   }
 
+  function deleteAllCycles() {
+    dispatch(deleteAllCyclesAction())
+  }
+
   return (
     <CyclesContext.Provider
       value={{
@@ -123,6 +122,7 @@ export function CyclesContextProvider({
         setSecondsPassed,
         createNewCycle,
         interruptCurrentCycle,
+        deleteAllCycles,
       }}
     >
       {children}

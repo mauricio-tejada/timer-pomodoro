@@ -3,19 +3,29 @@ import styled from 'styled-components'
 export const HistoryContainer = styled.main`
   flex: 1;
   padding: 3.5rem;
+  overflow: auto;
 
   display: flex;
   flex-direction: column;
 
-  h1 {
-    font-size: 1.5rem;
-    color: ${(props) => props.theme.gray100};
+  div {
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 1.5rem;
+      color: ${(props) => props.theme.gray100};
+    }
+    svg:hover {
+      color: ${(props) => props.theme.red500};
+      cursor: pointer;
+    }
   }
 `
 export const HistoryList = styled.div`
   flex: 1;
-  overflow: auto;
   margin-top: 2rem;
+  overflow: auto;
 
   table {
     width: 100%;
@@ -55,6 +65,15 @@ export const HistoryList = styled.div`
         padding-right: 1.5rem;
       }
     }
+  }
+  &::-webkit-scrollbar {
+    border-radius: 8px;
+    width: 0.75rem;
+    background: ${(props) => props.theme.gray700};
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: ${(props) => props.theme.gray500};
   }
 `
 

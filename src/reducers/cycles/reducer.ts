@@ -1,12 +1,27 @@
-import { Cycle } from '../../contexts/CyclesContext'
 import { ActionsTypes } from './actions'
 
-interface CyclesState {
+export interface Cycle {
+  id: string
+  task: string
+  minutesAmount: number
+  startDate: Date
+  interruptedDate?: Date
+  finishedDate?: Date
+}
+
+export interface CyclesState {
   cycles: Cycle[]
   activeCycleId: string | null
 }
 
-export function cyclesReducer(state: CyclesState, action: any) {
+interface Action {
+  type: ActionsTypes
+  payload: {
+    newCycle: Cycle
+  }
+}
+
+export function cyclesReducer(state: CyclesState, action: Action) {
   switch (action.type) {
     case ActionsTypes.ADD_NEW_CYCLE:
       return {
@@ -37,6 +52,10 @@ export function cyclesReducer(state: CyclesState, action: any) {
           }
         }),
         activeCycleId: null,
+      }
+    case ActionsTypes.DELETE_ALL_CYCLES:
+      return {
+        cycles: [],
       }
     default:
       return state
