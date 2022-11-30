@@ -8,11 +8,15 @@ export const HomeContainer = styled.main`
   justify-content: center;
   align-items: center;
 
+  width: 100%;
+
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 3.5rem;
+    width: 100%;
+    max-width: 650px;
   }
 `
 export const BaseCountdownButton = styled.button`
@@ -24,6 +28,9 @@ export const BaseCountdownButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 100%;
+  max-width: 650px;
 
   gap: 0.5rem;
   font-weight: bold;

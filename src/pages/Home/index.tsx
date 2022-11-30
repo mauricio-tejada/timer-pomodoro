@@ -44,7 +44,11 @@ export function Home() {
 
   return (
     <HomeContainer>
-      <form onSubmit={handleSubmit(HandleCreateNewCycle)} action="">
+      <form
+        onSubmit={handleSubmit(HandleCreateNewCycle)}
+        action=""
+        autoComplete="false"
+      >
         <FormProvider {...newCycleForm}>
           <NewCycleForm />
         </FormProvider>

@@ -12,10 +12,23 @@ export const CountdownContainer = styled.div`
   line-height: 8rem;
   color: ${(props) => props.theme.gray100};
 
+  width: 100%;
+  max-width: 650px;
+
+  @media (max-width: 500px) {
+    font-size: 5.5rem;
+    line-height: 4rem;
+    gap: 0.3rem;
+  }
+
   span {
     padding: 2rem 1rem;
     border-radius: 8px;
     background: ${(props) => props.theme.gray700};
+
+    @media (max-width: 500px) {
+      padding: 1rem 0.5rem;
+    }
   }
 `
 export const CountdownSeparator = styled.div`
@@ -26,4 +39,10 @@ export const CountdownSeparator = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 500px) {
+    padding: 1rem 0;
+    width: 0.5rem;
+    font-size: 2rem;
+  }
 `

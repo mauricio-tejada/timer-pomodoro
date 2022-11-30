@@ -22,7 +22,6 @@ export function History() {
               <th>Duração</th>
               <th>Início</th>
               <th>Status</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -47,9 +46,6 @@ export function History() {
                     {!cycle.interruptedDate && !cycle.finishedDate && (
                       <Status statusColor="yellow">Em andamento</Status>
                     )}
-                  </td>
-                  <td>
-                    <Trash size={20} />
                   </td>
                 </tr>
               )
