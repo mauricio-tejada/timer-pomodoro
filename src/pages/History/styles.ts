@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const HistoryContainer = styled.main`
   flex: 1;
-  padding: 3.5rem;
+  padding-top: 3.5rem;
   overflow: auto;
 
   display: flex;
@@ -15,6 +15,10 @@ export const HistoryContainer = styled.main`
     h1 {
       font-size: 1.5rem;
       color: ${(props) => props.theme.gray100};
+
+      @media (max-width: 500px) {
+        font-size: 1rem;
+      }
     }
     svg:hover {
       color: ${(props) => props.theme.red500};
@@ -23,7 +27,7 @@ export const HistoryContainer = styled.main`
   }
 `
 export const HistoryList = styled.div`
-  flex: 1;
+  //flex: 1;
   margin-top: 2rem;
   overflow: auto;
 
@@ -58,7 +62,6 @@ export const HistoryList = styled.div`
       line-height: 1.6;
 
       &:first-child {
-        width: 50%;
         padding-left: 1.5rem;
       }
       &:last-child {

@@ -22,13 +22,14 @@ const BaseInput = styled.input`
   height: 2.5rem;
   border: 0;
   border-bottom: 2px solid ${(props) => props.theme.gray500};
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1.125rem;
   padding: 0 0.5rem;
   color: ${(props) => props.theme.gray100};
 
   @media (max-width: 500px) {
     font-size: 1rem;
+    height: 1.5rem;
   }
 
   &:focus {
