@@ -15,7 +15,7 @@ import { useContext } from 'react'
 
 const newCycleFormValitationSchema = zod.object({
   task: zod.string().min(1),
-  minutesAmount: zod.number().min(1).max(60),
+  minutesAmount: zod.number().min(1).max(90),
 })
 
 type NewCycleFormData = zod.infer<typeof newCycleFormValitationSchema>
@@ -49,9 +49,16 @@ export function Home() {
         action=""
         autoComplete="false"
       >
-        <FormProvider {...newCycleForm}>
-          <NewCycleForm />
-        </FormProvider>
+        {activeCycle ? (
+          <h3>
+            {activeCycle.task} durante {activeCycle.minutesAmount} minutos
+          </h3>
+        ) : (
+          <FormProvider {...newCycleForm}>
+            <NewCycleForm />
+          </FormProvider>
+        )}
+
         <Countdown />
 
         {activeCycle ? (
