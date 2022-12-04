@@ -2,13 +2,11 @@
 
 Um Timer Pomodoro construido durante a trilha de React Js do curso Ignite da Rocketseat.
 
-<img src="./public/print_home.jpg">
+<img src="./public/main.gif">
 
 ## 🚀 Começando
 
 Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
-
-Ou você pode apenas utilizar a aplicação por meio deste [Link](https://).
 
 ### 📋 Pré-requisitos
 
