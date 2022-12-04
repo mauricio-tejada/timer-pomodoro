@@ -47,7 +47,7 @@ export function Home() {
       <form
         onSubmit={handleSubmit(HandleCreateNewCycle)}
         action=""
-        autoComplete="false"
+        autoComplete="off"
       >
         {activeCycle ? (
           <h3>
