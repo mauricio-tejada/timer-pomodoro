@@ -45,7 +45,9 @@ A aplicação é dividida em duas páginas:
 
 <img src="./public/print_hist.jpg">
 
-### Funcionalidades e correção de bugs
+### Novas funcionalidades e correção de bugs
+
+Inseri novas funcionalidades a aplicação, além de corigir alguns bugs que ficaram.
 
 * Limpar o histórico de tarefas, na aplicação original não havia esta opção.
 
